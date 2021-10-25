@@ -3,4 +3,21 @@
   margin: 0;
   box-sizing: border-box;
   font-family: "Crete Round", serif;
-}/*# sourceMappingURL=style.css.map */
+}
+
+main {
+  text-align: center;
+}
+
+#form {
+  margin-top: 7vh;
+}
+
+form input {
+  margin: 2vh 0;
+}
+
+.add-btn {
+  margin-top: 2vh;
+  padding: 5px 15px;
+}
