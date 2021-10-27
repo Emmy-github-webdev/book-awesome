@@ -4,11 +4,41 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
+  <title>Awesome Books</title>
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <main>
+  <div class="container">
+    <h1 class="title">Awesome Books</h1>
+    <table class="book-container">
+      <thead>
+        <tr>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody id="book-list" class="book-list">
+
+      </tbody>
+    </table>
+
+    <form id="book-form">
+      <div class="form-group">
+        <label for="title"></label>
+        <input type="text" id="title" class="title"  placeholder="Book title">
+      </div>
+
+      <div class="form-group">
+        <label for="author"></label>
+        <input type="text" id="author" class="author" placeholder="Book author">
+      </div>
+      <div>
+        <input type="submit" value="Add Book" class="btn btn-primary">
+      </div>
+    </form>
+  </div>
+  <!-- <main>
     <h1 class="title">Awesome Books</h1>
     <ul class="book-ul">
     </ul>
@@ -19,7 +49,7 @@
         <button class="add-btn" type="submit">Add</button>
       </form>
     </div>
-  </main>
-  <script src="./scripts/main.js"></script>
+  </main> -->
+  <script src="scripts/scripts.js"></script>
 </body>
 </html>
