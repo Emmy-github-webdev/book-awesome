@@ -5,6 +5,8 @@ Awesome is a project that showcases my Javascript DOM manipulation experience an
 
 If you like what you see and have a project you need coded, don't hesitate to contact me.
 
+## Design
+
 ![Capstone Responsiveness](image/awesome-book.PNG)
 
 # Built With
