@@ -14,7 +14,8 @@ class UI {
     const listLi = document.createElement('tr');
 
     listLi.innerHTML = `
-    <td>${book.title}</td> by
+    <td>${book.title}</td>
+    <td>by</td>
     <td>${book.author}</td>
     <td><a href="#" class="delete">Remove</a></td>
     `;
