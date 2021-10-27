@@ -1,14 +1,15 @@
-//book class
+// book class
+/* eslint max-classes-per-file: ["error", 3] */
 class Book {
   constructor(title, author) {
     this.title = title;
     this.author = author;
   }
-};
+}
 
-//UI class
+// UI class
 class UI {
-  addBookToList(book) {
+  addBookToList = (book) => {
     const list = document.getElementById('book-list');
     const listLi = document.createElement('tr');
 
@@ -20,11 +21,11 @@ class UI {
     list.appendChild(listLi);
   }
 
-  showAlert(message, className) {
-    //Create div
+  showAlert = (message, className) => {
+    // Create div
     const div = document.createElement('div');
     div.className = `alert ${className}`;
-    //add text
+    // add text
     div.appendChild(document.createTextNode(message));
 
     const container = document.querySelector('.container');
@@ -32,30 +33,30 @@ class UI {
 
     container.insertBefore(div, form);
 
-    //Timeout after 3 seconds
-    setTimeout(function() {
+    // Timeout after 3 seconds
+    setTimeout(() => {
       document.querySelector('.alert').remove();
     }, 3000);
   }
 
-  deletBook(target) {
+  deletBook = (target) => {
     if (target.className === 'delete') {
       target.parentElement.parentElement.remove();
     }
   }
 
-  clearFields() {
+  clearFields = () => {
     document.getElementById('title').value = '';
     document.getElementById('author').value = '';
   }
-};
+}
 
-//Local storage class
+// Local storage class
 class Store {
-  //fetch book from local storage
+  // fetch book from local storage
   static getBooks() {
     let books;
-    if(localStorage.getItem('books') === null) {
+    if (localStorage.getItem('books') === null) {
       books = [];
     } else {
       books = JSON.parse(localStorage.getItem('books'));
@@ -65,9 +66,9 @@ class Store {
 
   static displayBooks() {
     const books = Store.getBooks();
-    books.forEach(function(book) {
-      const ui = new UI;
-      //Add book to UI
+    books.forEach((book) => {
+      const ui = new UI();
+      // Add book to UI
       ui.addBookToList(book);
     });
   }
@@ -80,7 +81,7 @@ class Store {
 
   static removeBook(author) {
     const books = Store.getBooks();
-    books.forEach(function(book, index) {
+    books.forEach((book, index) => {
       if (book.author === author) {
         books.splice(index, 1);
       }
@@ -89,58 +90,55 @@ class Store {
   }
 }
 
-//DOM load event
+// DOM load event
 document.addEventListener('DOMContentLoaded',
-Store.displayBooks);
+  Store.displayBooks);
 
-//Event Listners to add book
+// Event Listners to add book
 document.getElementById('book-form').addEventListener('submit',
-function(e) {
+  (e) => {
+    // get form values
+    const title = document.getElementById('title').value;
+    const author = document.getElementById('author').value;
 
-  //get form values
-  const title = document.getElementById('title').value;
-  const author = document.getElementById('author').value;
+    // Instantiate  book
+    const book = new Book(title, author);
 
-  // Instantiate  book
-  const book = new Book(title, author);
+    // Instantiate UI
+    const ui = new UI();
 
+    // Validate input
+    if (title === '' || author === '') {
+    // error message
+      ui.showAlert('Please fill in all the fields', 'error');
+    } else {
+    // Add book to book list
+      ui.addBookToList(book);
+
+      // Add book to local storage
+      Store.addBook(book);
+
+      // success alert
+      ui.showAlert('Book Added!', 'success');
+
+      // clear fields after adding
+      ui.clearFields();
+    }
+
+    e.preventDefault();
+  });
+
+// Event listner for delete
+document.getElementById('book-list').addEventListener('click', (e) => {
   // Instantiate UI
-  const ui = new UI();
-
-  //Validate input
-  if (title === '' || author === '') {
-    //error message
-    ui.showAlert('Please fill in all the fields', 'error');
-  } else {
-    //Add book to book list
-    ui.addBookToList(book);
-
-    //Add book to local storage
-    Store.addBook(book);
-
-    //success alert
-    ui.showAlert('Book Added!', 'success');
-
-    //clear fields after adding
-    ui.clearFields();
-  }
-
-  e.preventDefault();
-});
-
-//Event listner for delete
-document.getElementById('book-list').addEventListener
-('click', function(e) {
- 
-  //Instantiate UI
   const ui = new UI();
 
   ui.deletBook(e.target);
 
-  //Remove book from local storage
+  // Remove book from local storage
   Store.removeBook(e.target.parentElement.previousElementSibling.textContent);
 
-  //Show message
+  // Show message
   ui.showAlert('Book Removed!', 'success');
   e.preventDefault();
 });
