@@ -8,7 +8,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="container">
+  <div class="container center">
     <h1 class="title">Awesome Books</h1>
     <table class="book-container">
       <thead>
@@ -24,17 +24,18 @@
     </table>
 
     <form id="book-form">
+      <h2 class="form-title center">Add a new book</h2>
       <div class="form-group">
         <label for="title"></label>
-        <input type="text" id="title" class="title"  placeholder="Book title">
+        <input type="text" id="title" class="title form-control border"  placeholder="Book title">
       </div>
 
       <div class="form-group">
         <label for="author"></label>
-        <input type="text" id="author" class="author" placeholder="Book author">
+        <input type="text" id="author" class="author form-control border" placeholder="Book author">
       </div>
-      <div>
-        <input type="submit" value="Add Book" class="btn btn-primary">
+      <div class="form-group">
+        <input type="submit" value="Add Book" class="btn btn-primary border">
       </div>
     </form>
   </div>
