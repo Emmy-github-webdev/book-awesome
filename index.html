@@ -8,37 +8,73 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-  <div class="container center">
-    <h1 class="title">Awesome Books</h1>
-    <table class="book-container">
-      <thead>
-        <tr>
-          <th></th>
-          <th></th>
-          <th></th>
-        </tr>
-      </thead>
-      <tbody id="book-list" class="book-list">
-
-      </tbody>
-    </table>
-
-    <form id="book-form">
-      <h2 class="form-title center">Add a new book</h2>
-      <div class="form-group">
-        <label for="title"></label>
-        <input type="text" id="title" class="title form-control border"  placeholder="Book title">
+  <header>
+    <h3>Awesome Books</h3>
+    <nav>
+      <div class="fsnav">
+        <a href="#" id="list" class="fsnav-link display">List</a>|
+        <a href="#" id="add" class="fsnav-link display">Add New Book</a>|
+        <a href="#"id="contact" class="fsnav-link display">Contact</a>
       </div>
-
-      <div class="form-group">
-        <label for="author"></label>
-        <input type="text" id="author" class="author form-control border" placeholder="Book author">
+    </nav>
+  </header>
+  <div class="container center"></div>
+    <div id="dateFormat" class="dateFormat"></div>
+    <section id="listSection">
+      <h1 class="title">Awesome Books</h1>
+      <table class="book-container">
+        <thead>
+          <tr>
+            <th></th>
+            <th></th>
+            <th></th>
+          </tr>
+        </thead>
+        <tbody id="book-list" class="book-list"></tbody>
+      </table>
+    </section>
+    <section id="newBookSection" class="page show-list">
+      <form id="book-form">
+        <h2 class="form-title center">Add a new book</h2>
+        <div class="form-group">
+          <label for="title"></label>
+          <input type="text" id="title" class="title form-control border"  placeholder="Book title">
+        </div>
+  
+        <div class="form-group">
+          <label for="author"></label>
+          <input type="text" id="author" class="author form-control border" placeholder="Book author">
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Add Book" class="btn btn-primary border">
+        </div>
+      </form>
+    </section>
+    <section id="contactSection" class="page contactSection">
+      <h2>Contact Information</h2>
+      <span>
+        Do you have any questions or you just want to say "Hello"?<br/>You can reach out to us!
+      </span>
+      <div>
+        <ul>
+          <li>
+            Our e-mail: mail@mail.com
+          </li>
+          <li>
+            Our phone number: +1 234 567 89
+          </li>
+          <li>
+            Our address: The planet Earth.
+          </li>
+        </ul>
       </div>
-      <div class="form-group">
-        <input type="submit" value="Add Book" class="btn btn-primary border">
-      </div>
-    </form>
+    </section>
   </div>
+  <footer>
+    <p>&copy; 2021 copyright. Emmanuel</p>
+  </footer>
   <script src="scripts/scripts.js"></script>
+  <script src="scripts/nav.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/luxon@2.0.2/build/global/luxon.min.js"></script>
 </body>
 </html>
