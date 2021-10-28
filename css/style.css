@@ -5,20 +5,41 @@
   font-family: "Crete Round", serif;
 }
 
-.container {
-  margin-top: 10vh;
-  width: 50vw;
+/* header section */
+header {
+  background: #f9f9f9;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  font-size: 20px;
+  height: 75px;
+}
+
+.fsnav .fsnav-link {
+  display: inline-block;
+  padding: 20px 5px;
+  font-size: 18px;
+  text-decoration: none;
+  color: #000;
+}
+
+#dateFormat {
+  margin-left: 60%;
+  font-size: 20px;
+  padding: 5px;
+}
+
+.page {
+  display: none;
+  margin: 1rem;
   padding: 1rem;
-  background-color: white;
-  box-shadow: 2px 2px 3px 2px rgba(48, 43, 43, 0.2);
 }
 
-.center {
-  margin: 0 auto;
-}
-
-.center > h1,
-h2 {
+.container {
+  width: 50%;
+  padding: 1rem;
+  justify-content: center;
+  background-color: #fff;
   text-align: center;
 }
 
@@ -26,6 +47,10 @@ table {
   width: 40vw;
   padding: 1rem;
   border: 1px solid #000;
+}
+
+#listSection {
+  margin-left: 30%;
 }
 
 td {
@@ -46,6 +71,16 @@ tr:nth-child(odd) {
   margin-bottom: 5vh;
 }
 
+.contactSection h2 {
+  font-weight: 900;
+  text-align: center;
+  margin-bottom: 3vh;
+}
+
+#book-form h2 {
+  text-align: center;
+}
+
 .form-title {
   margin: 5vh 0;
 }
@@ -64,7 +99,7 @@ tr:nth-child(odd) {
   border: solid 1px black;
 }
 
-a {
+.book-list a {
   text-decoration: none;
   background: #f5f5f0;
   color: #000;
@@ -83,4 +118,37 @@ input[type=submit] {
   border: none;
   border-radius: 4px;
   cursor: pointer;
+}
+
+.contactSection span {
+  font-weight: 600;
+  margin-left: 30%;
+  margin-top: 10%;
+}
+
+.contactSection div {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px;
+}
+
+.contactSection ul {
+  list-style: square;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+footer {
+  background-color: lightgray;
+  color: #000;
+  margin-top: 20%;
+  text-align: center;
+  font-size: 17px;
+  font-weight: 900;
+  height: 10vh;
+}
+
+footer p {
+  padding: 3.5vh 0;
 }
